@@ -1,6 +1,6 @@
 package com.training.Feb20th_Day2.Multithreading.HomeAssignment;
 
-import java.util.Random;
+import java.util.*;
 
 public class GuessThread extends Thread {
     private int value;
