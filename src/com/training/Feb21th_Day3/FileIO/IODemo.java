@@ -10,7 +10,7 @@ public class IODemo {
     public static void main(String... args) throws IOException {
 
         //byte[] array = new byte[100];
-        InputStream input = new FileInputStream("C:\\java-basics\\src\\com\\training\\Feb21th_Day3\\FileIO\\input.txt");
+        InputStream input = new FileInputStream("C:\\java-basics\\src\\com\\training\\Feb21th_Day3\\FileIO\\input1.txt");
         //input.read(array);
 
         int i = input.read();
