@@ -1,8 +1,11 @@
 package com.training.Feb20th_Day2.EvenOdd;
 
+import java.util.function.Predicate;
+
 public class EvenOdd {
     public static void main(String... args){
-        FuncInterface2 obj = a -> a%2!=0 ? "Odd" : "Even";
-        System.out.println(obj.EvenOdd(20));
+        Predicate<Integer> obj = a -> a%2!=0;
+        System.out.println(obj.test(2));
     }
 }
+
