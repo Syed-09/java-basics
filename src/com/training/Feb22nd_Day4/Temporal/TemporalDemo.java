@@ -2,8 +2,6 @@ package com.training.Feb22nd_Day4.Temporal;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
 public class TemporalDemo {
@@ -13,6 +11,5 @@ public class TemporalDemo {
 
         LocalDate nextMonday = date.with(TemporalAdjusters.next(DayOfWeek.THURSDAY));
         System.out.println("Next Monday is: "+nextMonday);
-
     }
 }

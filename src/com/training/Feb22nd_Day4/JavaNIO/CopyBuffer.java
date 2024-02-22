@@ -21,14 +21,14 @@ public class CopyBuffer {
     public static void main(String... args) throws IOException {
 
         readFile(sourceFilePath);
-        writeFile(destFilePath);
+        copyFile(sourceFilePath,destFilePath);
 
 //        FileInputStream in = new FileInputStream("bufferFileInputStream.txt");
 //        ReadableByteChannel channel = in.getChannel();
     }
 
-    private static void writeFile(Path filePath) throws IOException {
-        String input = readFile(filePath);
+    private static void copyFile(Path srcFilePath, Path destFilePath) throws IOException {
+        String input = readFile(srcFilePath);
         //System.out.println("Writing Text: "+filePath.getFileName()+" ::"+input);
         byte[] inputBytes = input.getBytes();
 
@@ -36,7 +36,7 @@ public class CopyBuffer {
         FileChannel writeChannel = null;
 
         try {
-            writeChannel = FileChannel.open(filePath, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
+            writeChannel = FileChannel.open(destFilePath, StandardOpenOption.CREATE, StandardOpenOption.WRITE);
             //communication should always happen with the buffer but not directly
             int numOfBytesWritten = writeChannel.write(writer);
         } catch (IOException e) {
@@ -52,8 +52,8 @@ public class CopyBuffer {
         }
     }
 
-    private static String readFile(Path filePath) throws IOException {
-        String output="";
+    public static String readFile(Path filePath) throws IOException {
+        String output = "";
 
         FileChannel readChannel = FileChannel.open(filePath);
         ByteBuffer readBuffer = ByteBuffer.allocate(Math.toIntExact(readChannel.size()));

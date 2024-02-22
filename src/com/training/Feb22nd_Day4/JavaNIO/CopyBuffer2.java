@@ -52,14 +52,15 @@ public class CopyBuffer2 {
     }
 
     private static String readFile(Path filePath) throws IOException {
-        String output="";
+        //String output="";
 
         FileChannel readChannel = FileChannel.open(filePath);
         ByteBuffer readBuffer = ByteBuffer.allocate(Math.toIntExact(readChannel.size()));
         try {
             readChannel.read(readBuffer);
             byte[] bytes = readBuffer.array();
-            output = new String(bytes);
+            String output = new String(bytes);
+            return output;
             //System.out.println("Text from the file" + filePath.getFileName()+ "::"+output);
 
         } catch (IOException e) {
@@ -72,6 +73,6 @@ public class CopyBuffer2 {
                 throw new RuntimeException(e);
             }
         }
-        return output;
+
     }
 }

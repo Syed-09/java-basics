@@ -1,1 +1,1 @@
-Example
+This text will be written from java code (JavaNIO Folder)

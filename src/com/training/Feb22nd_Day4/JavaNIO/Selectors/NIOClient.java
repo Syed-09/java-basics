@@ -27,7 +27,7 @@ public class NIOClient {
             buffer.flip();
 
             String res =  new String(buffer.array());
-            System.out.println("Server Respone : "+ res);
+            System.out.println("Server Response : "+ res);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
