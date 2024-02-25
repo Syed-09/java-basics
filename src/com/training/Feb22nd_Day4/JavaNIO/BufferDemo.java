@@ -3,7 +3,7 @@ package com.training.Feb22nd_Day4.JavaNIO;
 import java.nio.CharBuffer;
 public class BufferDemo {
     public static void main(String... args){
-        CharBuffer buffer = CharBuffer.allocate(16);
+        CharBuffer buffer = CharBuffer.allocate(8);
         String text = "Example";
         System.out.println("Input text: "+text);
 
